@@ -1,0 +1,45 @@
+.btn {
+    width: 11.25rem;
+    height: 3.125rem;
+    background-color: #a70c5d;
+    border-radius: 25px;
+    color: white;
+    font-family: $primary-font;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px $pink;
+    cursor: pointer;
+    transition: $time;
+}
+
+.btn:hover svg .st0 {
+    // stroke: #000000;
+    transition: $time;
+    transform: translateY(25px);
+}
+
+.btn svg .st0 {
+    transition: $time;
+}
+
+.btn-secondary {
+    height: 5rem;
+    width: 5rem;
+    background-color: #fff;
+    box-shadow: 0 0 1px #fff;
+    padding: 0;
+    border-radius: 50px;
+    background-image: url('../img/svg/play.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 2rem;
+    background-size: 20px 20px;
+    transition: $time;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-size: 23px 23px;
+    transition: $time;
+}

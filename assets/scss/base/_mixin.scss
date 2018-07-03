@@ -1,0 +1,80 @@
+
+@mixin clearfix {
+	zoom:1;
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+}
+//-----------gradient---------------
+@mixin background-gradient($start-color, $end-color, $orientation) {
+	background: $start-color;
+
+	@if $orientation == 'vertical' {
+		background: -webkit-linear-gradient(top, $start-color, $end-color);
+		background: linear-gradient(to bottom, $start-color, $end-color);
+	} @else if $orientation == 'horizontal' {
+		background: -webkit-linear-gradient(left, $start-color, $end-color);
+		background: linear-gradient(to right, $start-color, $end-color);
+	} @else {
+		background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+		background: radial-gradient(ellipse at center, $start-color, $end-color);
+	}
+}
+
+//-------------font face--------------------
+@mixin font-face($name, $file_name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+					eot: "?#iefix",
+					svg: "#" + str-replace($file_name, " ", "_")
+	);
+
+	$formats: (
+					eot: "embedded-opentype",
+					otf: "opentype",
+					ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: url(quote($path + ".eot"));
+		src: $src;
+	}
+}
+
+//-------------input placeholder---------------------
+@mixin placeholder($color, $font){
+	&::-webkit-input-placeholder { color:$color; font-family:$font;}
+	&::-moz-placeholder { color:$color; font-family:$font;}
+	&:-ms-input-placeholder { color:$color; font-family:$font;}
+	&:-moz-placeholder { color:$color; font-family:$font;}
+}
+
+@mixin columns($count, $gap){
+	-webkit-column-count: $count;
+	-moz-column-count:    $count;
+	column-count:         $count;
+
+	-webkit-column-gap:   $gap;
+	-moz-column-gap:      $gap;
+	column-gap:           $gap;
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,82 @@
+footer {
+    @include flex-center;
+    flex-direction: column;
+    border-top: 1px solid #dcdcdc61;
+    padding: 2rem 0;
+    .footer-company {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 700;
+    }
+    .footer-contacts {
+        font-size: 18px;
+        padding-top: 0.6rem;
+        text-align: center;
+        line-height: 25px;
+        padding: .6rem 1rem 0 1rem;
+        &--pink {
+            color: $pink;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    .footer-socials {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        a {
+            height: 40px;
+            width: 40px;
+            display: block;
+            border: 2px solid #dcdcdc;
+            border-radius: 50%;
+            background-position: center;
+            margin: 0 5px;
+            transition: $time;
+        }
+        .fb {
+            background-image: url(../img/svg/facebook.svg);
+            background-repeat: no-repeat;
+        }
+        .tw {
+            background-image: url(../img/svg/twitter.svg);
+            background-repeat: no-repeat;
+        }
+        .in {
+            background-image: url(../img/svg/linkedin.svg);
+            background-repeat: no-repeat;
+        }
+    }
+    a.fb {
+        background-size: 8px;
+    }
+    a.fb:hover {
+        border: 2px solid #3b5998;
+        background-image: url(../img/svg/facebook-active.svg);
+        transition: $time;
+    }
+    a.tw {
+        background-size: 19px;
+    }
+    a.tw:hover {
+        border: 2px solid #00aced;
+        background-image: url(../img/svg/twitter-active.svg);
+        transition: $time;
+    }
+    a.in {
+        background-size: 15px;
+        background-position-x: 13px !important;
+        background-position-y: 12px !important;
+    }
+    a.in:hover {
+        border: 2px solid #007bb6;
+        background-image: url(../img/svg/linkedin-active.svg);
+        transition: $time;
+    }
+    .footer-copyright {
+        font-size: 12px;
+        .strong {
+            font-weight: 700;
+        }
+    }
+}

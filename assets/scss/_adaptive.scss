@@ -1,0 +1,214 @@
+@media only screen and (max-width: 1200px) {
+    .section-index {
+        background-position-x: 100%;
+    }
+    .section-review--tiles-single {
+        width: 50%;
+        .video-img {
+            height: 200px;
+        }
+    }
+    .section-review--tiles-single:last-child {
+        margin-top: 3rem;
+    }
+    .section-recall--form {
+        padding: 0 5rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .header-container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        width: calc(100% - 6rem);
+    }
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        width: calc(100% - 6rem);
+    }
+    .section-index {
+        background-position-x: calc(100% + 10rem);
+    }
+    .section-services--tiles-single {
+        width: calc(50% - 2rem);
+        padding: 2rem 1rem 2rem 1rem;
+    }
+    .section-recall--form {
+        padding: 0;
+    }
+    .section-services--modal {
+        width: 100%;
+        left: 0;
+        top: 566px;
+        border-left: none;
+        border-top: 1px solid $pink;
+    }
+    .section-services--modal:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 7rem;
+            width: 1rem;
+            height: 1rem;
+            color: #a70c5d;
+            background: #a70c5d;
+            border: 1px solid;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            z-index: 3;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header-container--block {
+        nav {
+            position: absolute;
+            @include flex-center;
+            top: 120px;
+            z-index: 10;
+            width: 100%;
+            left: 0;
+            padding: 0;
+            background: white;
+            margin: 0;
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-left: none;
+            border-right: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            transform: translateX(-100%);
+            z-index: 1001; // transition: ease-out .3s;
+            ul {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%; // padding-right: 0;
+                li {
+                    @include flex-center;
+                    padding: 0 !important;
+                    height: 3rem;
+                    width: 100%;
+                    a {
+                        padding: 0 !important;
+                        height: 100%;
+                        width: 100%;
+                        @include flex-center;
+                    }
+                    a:after {
+                        content: none;
+                    }
+                }
+            }
+        }
+        .hamburger {
+            flex-direction: column;
+            @include flex-center;
+            margin-left: 1.5rem;
+        }
+    }
+    .nav-is-active {
+        transform: translateX(0) !important;
+        transition: ease-out $time;
+    }
+    .section-index {
+        background-image: none;
+        &--excerpt {
+            width: 100%;
+        }
+        &--play {
+            width: 3.125rem;
+            height: 3.125rem;
+            box-shadow: 0 0 5px #a70c5d40;
+            background-position-x: 1.1rem;
+            position: relative;
+            left: 0;
+            top: 0;
+            margin-top: 3.75rem;
+            margin-bottom: 3.75rem;
+            margin-left: 1rem;
+        }
+        &--button-stack {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    .section-services--tiles-single {
+        width: 100%;
+        padding: 2rem 0;
+    }
+    .section-services--tiles-single--tileblock-headertile {
+        margin-top: 0;
+    }
+    .section-services--tiles-single {
+        border-bottom: none !important;
+        border-top: 1px solid gainsboro !important;
+    }
+    .section-services--tiles-single:first-child {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+    .section-review--tiles-single {
+        width: 100%;
+    }
+    .section-review--tiles-single:nth-child(2) {
+        margin-top: 3rem;
+    }
+    .section-recall--form-right {
+        width: 100%;
+    }
+    .section-recall--form-left {
+        width: 100%;
+    }
+    .section-services--tiles-single--tileblock ul {
+        padding: 0 50px;
+        width: 80%;
+        padding-right: 0;
+    }
+    .shrink .header-container--block nav {
+        top: 70px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: calc(100% - 3rem);
+    }
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: calc(100% - 3rem);
+    }
+    .section-services--tiles-single {
+        flex-direction: column;
+    }
+    .section-services--tiles-single--image {
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+    .section-services--tiles-single--tileblock {
+        width: 100%;
+    }
+    .modal-top,
+    .modal-bottom{
+        flex-direction: column !important;
+    }
+    .modal-top--right-content{
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .section-services--tiles-single--image {
+        display: none;
+    }
+    .section-services--tiles-single--tileblock ul {
+        padding: 0 50px;
+        width: 80%;
+        padding-right: 0;
+    }
+}
